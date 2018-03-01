@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css"/>
+    <title>HANGMAN</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>HANGMAN</h1>
+      <div class="flex">
+        <img v-bind:src="img"></img>
+        <button v-show="!playing" v-on:click="startGame" id="play">PLAY</button>
+        <div v-show="playing">
+          <h1>{{filledWord}}</h1>
+          <form v-on:submit.prevent="nextGuess">
+            <input type="text" v-model="newguess">
+            <button type="submit" id="guess">GUESS</button>
+          </form>
+        </div>
+        <ul v-show="playing" v-for="guess in guesses">
+            <li>{{guess}}</li>
+        </ul>
+      </div>
+    </div>
+
+<footer><a href="UPDATE">Git Repo</a></footer>
+    
+  </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="vue.js"></script>
+</html>

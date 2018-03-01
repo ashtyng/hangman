@@ -1,0 +1,55 @@
+h1 {
+	font: garamond;
+	font-size: 80px;
+	text-align: center;
+}
+
+#play {
+	text-align: center;
+	font-size: 80px;
+	background-color: #4CAF50;
+	color: white;
+	border-radius:50%;
+	display: block;
+	margin: auto;
+}
+
+img {
+	height: 400px;
+	width: 400px;
+}
+
+input {
+	padding: 20px;
+	font-size: 80px;
+	width: 10%;
+	display: block;
+	margin: auto;
+}
+
+#guess {
+	text-align: center;
+	font-size: 50px;
+	background-color: grey;
+	color: white;
+	display: block;
+	margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+	
+	list-style-type: none;
+	font-size: 30px;
+}
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
