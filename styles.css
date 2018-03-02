@@ -1,3 +1,7 @@
+body {
+	margin: 0;
+}
+
 h1 {
 	font: garamond;
 	font-size: 80px;
@@ -15,14 +19,13 @@ h1 {
 }
 
 img {
-	height: 400px;
-	width: 400px;
+	height: 500px;
 }
 
 input {
 	padding: 20px;
 	font-size: 80px;
-	width: 10%;
+	width: 18%;
 	display: block;
 	margin: auto;
 }
@@ -42,14 +45,38 @@ ul {
     padding: 0;
 }
 
-ul li {
+li {
 	
 	list-style-type: none;
 	font-size: 30px;
+	display: inline-block;
 }
 
 .flex {
 	display: flex;
 	flex-wrap: wrap;
-	width: 100%;
+}
+
+.unit {
+	flex: 33%;
+	max-width: 33%;
+}
+
+@media (max-width: 800px) {
+	.unit {
+		flex: 50%;
+		max-width: 50%;
+	}
+}
+
+@media (max-width: 600px) {
+	.unit {
+		flex: 100%
+		max-width: 100%;
+	}
+}
+
+footer {
+	padding: 20px;
+	text-align: right;
 }

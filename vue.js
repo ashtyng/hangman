@@ -35,8 +35,38 @@ var app = new Vue({
 	},
 
 	methods: {
+		checkValid: function() {
+			var letterNumber = /^[a-z]+$/;
+ 			if(this.newguess.match(letterNumber)) 
+  			{
+   				return true;
+  			}
+			else
+				return false;
+		},
+		checkGuessed: function() {
+			for(var i=0;i<this.guesses.length;i++) {
+				if (this.guesses[i]===this.newguess)
+					return false;
+			}
+			return true;
+		},
 
 		nextGuess: function() {
+			var valid=this.checkValid();
+			if (valid===false) {
+				window.alert("Please only input single lowercase characters.");
+				this.newguess='';
+				return;
+			}
+			valid=this.checkGuessed();
+			if(valid===false) {
+				window.alert("You already guessed that letter!");
+				this.newguess='';
+				return;
+			}
+
+
 			this.guesses.push(this.newguess);
 			
 			let count=0;
@@ -61,6 +91,7 @@ var app = new Vue({
 					this.playing=false;
 				}
 			}
+			this.newguess='';
 		},
 
 		startGame: function() {
